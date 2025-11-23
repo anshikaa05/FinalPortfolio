@@ -1,6 +1,40 @@
 import React from "react";
+import { useState} from 'react'
+ import { FiGithub } from "react-icons/fi";
+import { BsLinkedin } from "react-icons/bs";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
+  const [showPopup, setShowPopup] = useState(false); // 👈 new popup state
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Simulate sending delay
+    setStatus("Sending...");
+
+    setTimeout(() => {
+      setStatus("✅ Message sent successfully!");
+      setShowPopup(true); // 👈 show popup
+
+      // Clear form
+      setFormData({ name: "", email: "", message: "" });
+
+      // Hide popup & message after 3 seconds
+      setTimeout(() => {
+        setStatus("");
+        setShowPopup(false);
+      }, 3000);
+    }, 1000);
+  };
+
+
   return (
     <section id="contact" className="relative py-20 text-white overflow-hidden">
       {/* Background effects */}
@@ -85,54 +119,85 @@ const Contact = () => {
               Connect With Me
             </h3>
             <div className="flex gap-4">
-              <a href="https://github.com/anshikasrivastava" target="_blank" rel="noopener noreferrer"
-                className="p-3 bg-white/10 rounded-full hover:bg-purple-500/20 transition-all">
-                <i className="fa-brands fa-github text-xl text-white"></i>
-              </a>
-              <a href="https://linkedin.com/in/anshika-srivastava-3417831b0" target="_blank" rel="noopener noreferrer"
-                className="p-3 bg-white/10 rounded-full hover:bg-purple-500/20 transition-all">
-                <i className="fa-brands fa-linkedin-in text-xl text-white"></i>
-              </a>
+               <a
+                                      href="https://github.com/anshikaa05"
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="p-2  text-teal-200 hover:text-teal-600 transition-colors"
+                                      aria-label="GitHub"
+                                    >
+                                      <FiGithub className="w-5 h-5" />
+                                    </a>
+                                    <a
+                                      href="https://linkedin.com/in/anshika-srivastava-3417831b0"
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="p-2 text-teal-200 hover:text-teal-600 transition-colors"
+                                      aria-label="LinkedIn"
+                                    >
+                                      <BsLinkedin className="w-5 h-5" />
+                                    </a>
             </div>
           </div>
         </div>
 
         {/* Right Card – Contact Form */}
-        <div className="lg:w-3/5 bg-white/5 border border-white/10 rounded-2xl shadow-lg backdrop-blur-md p-8">
-          <div className="h-1 bg-gradient-to-r from-teal-500 to-indigo-400 mb-6"></div>
-          <h3 className="text-2xl font-semibold mb-8 border-b border-white/10 pb-2 bg-gradient-to-r from-teal-600 to-indigo-400 bg-clip-text text-transparent">
-            Send Me a Message
-          </h3>
+      <div className="lg:w-3/5 bg-white/5 border border-white/10 rounded-2xl shadow-lg backdrop-blur-md p-8">
+        <div className="h-1 bg-gradient-to-r from-teal-500 to-indigo-400 mb-6"></div>
+        <h3 className="text-2xl font-semibold mb-8 border-b border-white/10 pb-2 bg-gradient-to-r from-teal-600 to-indigo-400 bg-clip-text text-transparent">
+          Send Me a Message
+        </h3>
 
-          <form className="space-y-6">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
-            />
-            <textarea
-              placeholder="Write your message..."
-              className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white min-h-[150px] focus:ring-2 focus:ring-teal-600 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="w-full py-3 bg-gradient-to-r from-teal-700 to-indigo-500 text-white font-semibold rounded-md hover:from-teal-700 hover:to-indigo-600 transition-all flex items-center justify-center gap-2">
-              Send Message
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                fill="none" stroke="currentColor" strokeWidth="2"
-                strokeLinecap="round" strokeLinejoin="round"
-                className="ml-2">
-                <path d="M22 2 11 13" />
-                <path d="M22 2 15 22 11 13 2 9l20-7z" />
-              </svg>
-            </button>
-          </form>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <input
+            name="name"
+            type="text"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
+          />
+          <input
+            name="email"
+            type="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
+          />
+          <textarea
+            name="message"
+            placeholder="Write your message..."
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white min-h-[150px] focus:ring-2 focus:ring-teal-600 focus:outline-none"
+          />
+          <button
+            type="submit"
+            className="w-full py-3 bg-gradient-to-r from-teal-700 to-indigo-500 text-white font-semibold rounded-md hover:from-teal-700 hover:to-indigo-600 transition-all flex items-center justify-center gap-2"
+          >
+            Send Message
+          </button>
+        </form>
+
+        {/* Success Message */}
+        {status && (
+          <p className="mt-4 text-center text-teal-400 font-medium animate-pulse">
+            {status}
+          </p>
+        )}
+      </div>
+       {/* ✅ Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 transition-opacity">
+          <div className="bg-white text-gray-900 rounded-xl shadow-2xl p-6 w-80 text-center animate-fadeIn">
+            <h4 className="text-lg font-semibold mb-2">✅ Message Sent!</h4>
+            <p className="text-sm text-gray-600">
+              Thank you for reaching out. I’ll get back to you soon!
+            </p>
+          </div>
         </div>
+      )}
       </div>
     </section>
   );

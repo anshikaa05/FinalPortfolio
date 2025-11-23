@@ -6,29 +6,20 @@ const projects = [
   {
     id: 1,
     image: "/project1.png",
-    title: "Minion Translator",
+    title: "BuyBridge",
     description:
-      "A fun translator app that converts English text into Minion language using a translation API.",
-    github: "https://github.com/iam-shreyasthana/minion-translator",
-    demo: "https://miniontranslatesite.netlify.app/",
+      "BuyBridge is your all-in-one platform to discover, explore, and connect with curated products and professional communities. Whether you’re browsing trending items, managing your cart, or networking with like-minded professionals, ConnectHub makes it simple, secure, and seamless. ",
+    github: "https://github.com/anshikaa05/BuyBridge",
+    demo: "https://anshikaa05.github.io/BuyBridge/",
   },
   {
     id: 2,
     image: "/project2.png",
-    title: "Emoji Interpreter",
+    title: "Personal Portfolio",
     description:
-      "A React app that interprets emoji meanings instantly with smooth user interaction.",
-    github: "https://github.com/iam-shreyasthana/emoji-interpreter",
-    demo: "https://emoji-interpreter-site.netlify.app/",
-  },
-  {
-    id: 3,
-    image: "/project3.png",
-    title: "Exceptional Books",
-    description:
-      "A responsive React app to browse and manage books with seamless UI and local storage.",
-    github: "https://github.com/iam-shreyasthana/exceptional-books",
-    demo: "https://exceptional-books-site.netlify.app/",
+      "Designed and developed a responsive personal portfolio using React (Vite) and Tailwind CSS to highlight my projects and experience. Integrated smooth animations with Framer Motion, implemented reusable components, and optimized for performance and accessibility. Deployed seamlessly on Vercel.",
+    github: "https://github.com/anshikaa05/FinalPortfolio",
+    demo: "https://final-portfolio-eta-liart.vercel.app/",
   },
 ];
 

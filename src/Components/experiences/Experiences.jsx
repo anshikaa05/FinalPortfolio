@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 
 const experienceData = [
   {
-    company: "Capgemini",
+    company: "Metlife Japan",
     role: "Senior Software Engineer",
     projects: [
       {
@@ -49,11 +49,11 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 px-6 bg-transparent text-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="numbered-heading text-3xl font-bold mb-10 flex items-center gap-2 text-teal-600">
+        <h2 className="numbered-heading text-3xl font-bold mb-10 flex items-center gap-2 text-teal-300">
           <span className="text-primary font-mono text-xl">02.</span> Where I’ve Worked
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-10 text-teal-600">
+        <div className="flex flex-col md:flex-row gap-10 text-teal-300">
           {/* Tabs */}
           <div className="relative md:w-1/4">
             <div className="flex md:flex-col overflow-x-auto md:overflow-visible border-l border-gray-700 text-teal-800">
@@ -61,7 +61,7 @@ const Experience = () => {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`relative px-4 py-3 text-left font-mono transition-all duration-300 w-full text-teal-600 ${
+                  className={`relative px-4 py-3 text-left font-mono transition-all duration-300 w-full text-teal-300 ${
                     activeIndex === index
                       ? "text-primary bg-primary/5 border-l-2 border-primary"
                       : "text-gray-400 hover:text-primary"
@@ -78,11 +78,11 @@ const Experience = () => {
             key={activeIndex}
             className="flex-1 md:pl-8 animate-fadeIn transition-all duration-500"
           >
-            <h3 className="text-xl font-semibold mb-2">
+            <h3 className="text-3xl font-bold mb-2">
               {activeProject.role}{" "}
               <span className="text-primary">@ {activeProject.company}</span>
             </h3>
-            <p className="text-gray-400 mb-6">{activeProject.duration}</p>
+            <p className="text-teal-300 mb-6">{activeProject.duration}</p>
             <ul className="space-y-3">
               {activeProject.achievements.map((achievement, idx) => (
                 <li
@@ -90,7 +90,7 @@ const Experience = () => {
                   className="flex items-start gap-3 text-gray-300 leading-relaxed group"
                 >
                   <ChevronRight className="w-4 h-4 text-primary flex-shrink-0 mt-1 group-hover:translate-x-1 transition-transform" />
-                  <span className="group-hover:text-white transition-colors">
+                  <span className="group-hover:text-teal-200 transition-colors">
                     {achievement}
                   </span>
                 </li>

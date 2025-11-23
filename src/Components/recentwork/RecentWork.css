@@ -35,7 +35,7 @@
 
 .recentwork__item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+  box-shadow: 0 10px 20px rgba(7, 243, 188, 0.92);
 }
 
 .recentwork__image img {

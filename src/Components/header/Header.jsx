@@ -1,9 +1,11 @@
   import React from "react";
   import { motion } from "framer-motion";
+  import { FiGithub } from "react-icons/fi";
+import { BsLinkedin } from "react-icons/bs";
 
   const Home = () => {
     const paragraph =
-      "A passionate Frontend Developer with over 3 years of experience building scalable and performant web applications using React, Redux Toolkit, and Tailwind CSS. I love working with web.";
+      "A passionate Frontend Developer with over 3 years of experience building scalable and performant web applications using React , Redux Toolkit and Tailwind CSS . I love working with web.";
 
     const words = paragraph.split(" ");
 
@@ -99,23 +101,23 @@
 
             {/* Skills */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="flex flex-wrap gap-3 justify-center md:justify-end mt-8 mb-10 "
+              className="flex flex-wrap gap-2 justify-center md:justify-end mt-8 mb-10 "
             >
               {[
                 ["React.js", "bg-blue-100 text-blue-700"],
                 ["Javascript(ES6+)", "bg-gray-100 text-gray-700"],
                 ["Redux-Toolkit", "bg-blue-100 text-blue-700"],
-                ["Node.js", "bg-teal-50 text-teal-600"],
+                
                 ["TypeScript", "bg-blue-50 text-blue-600"],
                 ["HTML/CSS", "bg-gray-100 text-gray-700"],
                 ["TailwindCSS", "bg-teal-50 text-teal-600"],
               ].map(([skill, classes]) => (
                 <span
                   key={skill}
-                  className={`px-3 py-1 rounded-full text-xs font-medium shadow-sm ${classes}`}
+                  className={`px-4 py-2 rounded-full text-xs font-medium shadow-sm ${classes}`}
                 >
                   {skill}
                 </span>
@@ -151,25 +153,30 @@
         {/* 🔹 Bottom Social Links */}
         <div className="absolute bottom-10 w-full max-w-6xl mx-auto px-6 flex items-center gap-5 justify-center md:justify-start">
           <a
-            href="https://github.com/iam-shreyasthana"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2.5 rounded-full bg-white/10 text-white/80 hover:text-teal-400 hover:bg-white/20 transition-all"
-          >
-            <i className="lab la-github text-xl"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/iam-shreyasthana"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2.5 rounded-full bg-white/10 text-white/80 hover:text-teal-400 hover:bg-white/20 transition-all"
-          >
-            <i className="lab la-linkedin text-xl"></i>
-          </a>
-          <div className="h-8 w-px bg-white/20 mx-2"></div>
+                        href="https://github.com/anshikaa05"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2  text-teal-200 hover:text-teal-600 transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <FiGithub className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://linkedin.com/in/anshika-srivastava-3417831b0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-teal-200 hover:text-teal-600 transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <BsLinkedin className="w-5 h-5" />
+                      </a>
+          <div className="h-8 w-px bg-white/20 mx-2" ></div>
           <a
             href="mailto:anshika.working2023@gmail.com"
-            className="text-sm text-white/70 hover:text-teal-400 transition-colors flex items-center"
+            target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-teal-200 hover:text-teal-600 transition-colors"
+                        aria-label="anshika.working2023@gmail.com"
           >
             anshika.working2023@gmail.com
           </a>

@@ -5,7 +5,7 @@ import { FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="py-8 border-t border-white/10 bg-[#0a0a0a] text-white relative z-10">
+    <footer className="py-8 border-t border-white/10  text-white relative z-10">
       <div className="container mx-auto px-6">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
@@ -18,7 +18,7 @@ const Footer = () => {
               Anshika<span className="text-white">.</span>
             </a>
             <p className="text-teal-100 mt-2 text-sm">
-              Frontend Developer | React.js Enthusiast
+              Frontend Developer | Web Enthusiast
             </p>
           </div>
 
@@ -59,7 +59,7 @@ const Footer = () => {
           {/* Right Section (Socials + Back to Top) */}
           <div className="flex justify-center md:justify-end items-center gap-4">
             <a
-              href="https://github.com/anshikasrivastava"
+              href="https://github.com/anshikaa05"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 hover:text-teal-400 transition-colors"
