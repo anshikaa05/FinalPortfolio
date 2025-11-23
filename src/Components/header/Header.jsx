@@ -45,7 +45,7 @@ import { BsLinkedin } from "react-icons/bs";
               <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-sm rounded-full p-2 border border-white/20 dark:border-white/10 shadow-xl">
                 <div className="h-full w-full rounded-full overflow-hidden border-4 border-white/30 shadow-inner">
                   <img
-                    src="/me.jpg"
+                    src="/me.jpeg"
                     alt="Anshika Srivastava"
                     className="w-full h-full object-cover"
                   />
